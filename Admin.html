@@ -1,0 +1,181 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link href="style_test_abc.css" rel="stylesheet" type="text/css" />
+<title>Men's Fashion Server</title>
+</head>
+
+<body>
+<script>
+	window.onload = function()
+	{
+		laySP();
+		hienthi();
+		trangthaiDangNhap();
+	}
+</script> 
+<div  id = "first" style=" position:fixed; height:740px;width:100%;z-index:20; display: inline; display: none;"> 
+	
+        <div id="DNadmin">
+			<p>Login Account Sever</p>
+			<hr>
+            <form>
+                <div class=" textboxAD clearfix" style="margin-top:30px;border-bottom:1px solid #000;">
+                 
+                    <i><img src="image/2x/baseline_person_white_18dp.png" /></i>
+                    <input type="text" placeholder="Tên Đăng Nhập"  id="TK" />
+                </div>
+                <div class="textboxAD">
+                    <i><img src="image/2x/baseline_lock_white_18dp.png" /></i>
+                    <input type="password" placeholder="Mật Khẩu"  id="MK" />
+                </div>
+                <input id ='DN' type="submit"  class="btn_loginAD" value="Login" style="font-size:22px; outline: none; font-weight:boldler;" /> 
+				<div style="margin-top:10px;margin-left:10%;width:80%; "><p class="DKad" style="font-size: 18px;text-align: center;margin-left:20%;" onclick="DKadmin();">Register Account Server</p></div>
+            </form>
+        </div>
+        <form action="" method="post">
+            <div id="DKadmin">
+				<p style="font-family:Tahoma; font-size:28px; margin-left:60px">Register Account Sever</p>
+				<hr>
+				<div style="float:left; width:50%">
+					<div>
+                        <p class="regisAD">Họ Và Tên:</p>
+                        <input type="text" placeholder="Họ và tên" class="inputAD" id="name">
+                    </div>
+                    <div>
+						<p class="regisAD">Số Điện Thoại:</p>
+                        <input type="text" placeholder="Số điện thoại" class="inputAD" id="phone">
+                    </div>
+                    <div>
+						<p class="regisAD">Địa Chỉ:</p>
+                        <input type="text" placeholder="Địa chỉ" class="inputAD" id="address">
+                    </div>
+                </div>
+				<div style="float:right; width:50%">
+					<div>
+						<p class="regisAD">Tên Đăng Nhập</p>
+                        <input type="text" placeholder="Tên đăng nhập" class="inputAD" id="admin_name">
+                    </div>
+                    <div>
+						<p class="regisAD">Mật Khẩu</p>
+                        <input type="password" placeholder="Mật khẩu" class="inputAD" id="password">
+                    </div>
+                    <div>
+						<p class="regisAD">Nhập Lại Mật Khẩu</p>
+                        <input type="password" placeholder="Nhập lại mật khẩu" class="inputAD" id="re_password">
+                    </div>
+                </div>
+				<div style="clear:both">
+					<input id="DK_ThanhCong" class ='btn_loginAD' style="width:40%; margin-left:30%" type="submit" value="Register"  return false"/>
+					<div style="margin-top:10px;margin-left:10%;width:80%"><p class="DKad" onclick="DNadmin();">Login Account Server</p></div>
+				</div>
+                </div>
+        </div>
+        </form>
+    
+    
+    <div id="customalert"></div>
+    
+	<div style="width:100%; height:80px;background-color:black;color:#CCC; display:none" id="adminCenter">
+    	<div style="float:left;font-size:32px">Men's Fashion Server</div>
+        <div id="nameAdmin" style="float:right; margin-right:7%; margin-top:5px; font-family:Tahoma;font-size:18px"></div>
+        <img style="vertical-align:middle; float:right" src="image/2x/admin.png" />
+		<div style="clear:both">
+			<div onclick="logout();"><a class="logoutAdmin" href="index_test.html">Người Dùng</a></div>
+        </div>
+    </div>
+    <div style="width:20%; height:650px;background-color:#CDDCDC;float:left;font-size:24px; display:none"  id="adminLeft">
+    	<div style="margin-top:50px;width:100%">
+        	<img style="vertical-align:middle;float:left" src="image/2x/baseline_arrow_right_black_18dp.png"/>
+            <a href="Admin.html?QuanLiSanPham">Quản Lí Sản Phẩm</a>
+        </div>
+        <div style="margin-top:30px;width:100%">
+        	<img style="vertical-align:middle;float:left" src="image/2x/baseline_arrow_right_black_18dp.png"/>
+            <a href="Admin.html?QuanLiNguoiDung">Quản Lí Người Dùng</a>
+        </div>
+        <div style="margin-top:30px;width:100%">
+        	<img style="vertical-align:middle;float:left" src="image/2x/baseline_arrow_right_black_18dp.png"/>
+            <a href="Admin.html?QuanLiHoaDon">Quản Lí Hóa Đơn</a>
+        </div>
+        <div style="margin-top:30px;width:100%">   
+        	<img style="vertical-align:middle;float:left" src="image/2x/baseline_arrow_right_black_18dp.png"/>
+            <a href="Admin.html?ThongKeDoanhThu">Thống Kê Doanh Thu</a>
+        </div>
+    </div>
+    <div style="width:80%; height:650px;float:right" id="adminRight">
+    	<img src="image/sale-admin-la-gi.jpg" width="1190" height="650"/>
+    </div>
+</div>
+
+ <div class="hienthi" id="addSP"> 
+ 	 <div class="themsanpham" id="add">
+    	<div class="close" style="margin-left:95%" onclick="dongthemSP()"><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="times" class="svg-inline--fa fa-times fa-w-11" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 352 512"><path fill="currentColor" d="M242.72 256l100.07-100.07c12.28-12.28 12.28-32.19 0-44.48l-22.24-22.24c-12.28-12.28-32.19-12.28-44.48 0L176 189.28 75.93 89.21c-12.28-12.28-32.19-12.28-44.48 0L9.21 111.45c-12.28 12.28-12.28 32.19 0 44.48L109.28 256 9.21 356.07c-12.28 12.28-12.28 32.19 0 44.48l22.24 22.24c12.28 12.28 32.2 12.28 44.48 0L176 322.72l100.07 100.07c12.28 12.28 32.2 12.28 44.48 0l22.24-22.24c12.28-12.28 12.28-32.19 0-44.48L242.72 256z"></path></svg>
+        </div>
+        <div style="float:left; width:50%">
+  		<p class="regisAD">Tên Sản Phẩm:</p>
+        <input type="text" id="NameSP" class="inputAD" />
+        <p class="regisAD">Giá Tiền:</p>
+        <input type="text" id="price" class="inputAD" />
+         <p class="regisAD">Hình Ảnh:</p>
+         <input type="file" id="upload" name="upload" onchange="ImagesFileAsURL(this);" style="margin-left:30px; margin-top:5px">
+         <div id="displayImg" style="margin-left:30px; margin-top:5px">
+         </div>
+        </div>
+        <div style="float:right; width:50%">
+            <p class="regisAD">Phân Loại</p>
+            <select class="inputAD" id="theloai">
+            	<option>---Loại---</option>
+                <option>Áo Khoác</option>
+                <option>Áo Thun</option>
+                <option>Áo Sơ Mi</option>
+                <option>Giày Adidas</option>
+                <option>Giày Nike</option>
+                <option>Giày Gucci</option>
+                <option>Quần Jean</option>
+                <option>Quần Tây</option>
+                <option>Quần Jogger</option>
+                <option>Quần Kaki</option>
+                <option>Ví Da</option>
+                <option>Thắt Lưng</option>
+                <option>Đồng Hồ</option>
+            </select>
+            <div style="float:left; width:50%">
+                 <p class="regisAD">Ảnh Phụ 1</p>
+                 <input type="file" id="upload1" name="upload1" onchange="ImagesFileAsURL(this);" style="margin-left:30px; margin-top:5px">
+                 <div id="displayImg1" style="margin-left:30px; margin-top:5px">
+                 </div>
+         	</div>
+           <div style="float:right; width:50%">
+                 <p class="regisAD">Ảnh Phụ 2</p>
+                 <input type="file" id="upload2" name="upload2" onchange="ImagesFileAsURL(this);" style="margin-left:30px; margin-top:5px">
+                 <div id="displayImg2" style="margin-left:30px; margin-top:5px">
+                 </div>
+         	</div>
+        </div>	
+        <div class="btnThemMoiSP1" style="clear:both; left:40%"  onclick="capnhatSP()">Thêm Sản Phẩm</div>
+    </div>
+   </div>
+   
+  <div class="hienthi" style=" position:relative" id="fixSP"> 
+ 	<div class="themsanpham" id="fix">
+    </div>
+ </div> 
+ 
+ <div class="hienthi" id="xemTTSP"> 
+ 	<div class="xemsanpham" id="xemSP">
+    </div>
+ </div>
+ 
+  <div class="hienthi" id="xoaSP"> 
+ 	<div id="xoasanpham">
+    </div>
+ </div>
+  <div class="hienthi" id="xemTTTK"> 
+ 	<div id="xemTK">
+    </div>
+ </div>
+ 
+<script type="text/javascript" src="admin.js"></script>
+</body>
+</html>

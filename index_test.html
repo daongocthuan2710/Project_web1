@@ -1,0 +1,242 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Men's Fashion</title>
+<link rel="" href="image/favicon.png"/>
+<link href="style_test_abc.css" rel="stylesheet" type="text/css" />
+<script src="https://code.jquery.com/jquery-3.4.1.js"
+        integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
+</head>
+
+<body>
+<script>
+	window.onload = function()
+	{
+		laySP();
+		doigia0();
+		dsdonhang();
+		hienthi();
+        publicUser();
+        publicAdmin();
+        publicAccLogin();
+        // publicUsLogin();
+
+        // trangthaiDangNhap();
+        checkTrangThai();
+
+	}
+</script>
+<div style="width:100%; height:auto; position:relative;background-color:#ececec;z-index: 10;" id="container">
+	<div id="header">
+    	<div class="logo"><a href="index_test.html"><img src="image/logo.png" /></a></div>
+        <div class="function">
+        	<div class="function_top">
+            	<div class="search">
+                	<div class="contain_search">
+                    	<input id="search_item" type="text" placeholder="Tìm Kiếm Của Bạn..."/>
+                        <button onclick="Search();"><a href="#"><img src="image/2x/baseline_search_black_18dp.png" /></a></button>
+                    </div>
+                </div>
+                <div class="user">
+                	<div class="menu_user">
+                    	<a href=""><img src="image/2x/baseline_notifications_none_black_18dp.png" />Thông Báo</a>
+                    </div>
+                	<div class="menu_user">
+                    	<a href="index_test.html?Gio-Hang"><img src="image/2x/baseline_add_shopping_cart_black_18dp.png" />Giỏ Hàng</a>
+                    </div>
+                    <div class="menu_user" id="asd">
+                    	<a id="click_login"><img src="image/2x/baseline_perm_identity_black_18dp.png" />Đăng Nhập</a>
+                    </div>
+                </div>
+            </div> 
+            <div class="function_bot">
+            	<ul id="menu">
+                    <li><a href="index_test.html?all">All</a>
+                	<li><a href="index_test.html?ao" >Áo</a>
+                    	<ul class="dropdown_menu">
+                        	<li><a href="index_test.html?ao_somi">Sơ Mi</a></li>
+                            <li><a href="index_test.html?ao_thun">Áo Thun</a></li>
+                            <li><a href="index_test.html?ao_khoac">Áo Khoác</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="index_test.html?quan" >Quần</a>
+                    	<ul class="dropdown_menu">
+                        	<li><a href="index_test.html?quan_jean">Jean</a></li>
+                            <li><a href="index_test.html?quan_tay">Tây</a></li>
+                            <li><a href="index_test.html?quan_jogger">Jogger</a></li>
+                            <li><a href="index_test.html?quan_kaki">Kaki</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="index_test.html?giay" >Giày</a>
+                    	<ul class="dropdown_menu">
+                        	<li><a href="index_test.html?giay_adidas">Adidas</a></li>
+                            <li><a href="index_test.html?giay_nike">Nike</a></li>
+                            <li><a href="index_test.html?giay_gucci">Gucci</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="index_test.html?phukien" >Phụ Kiện</a>
+                    	<ul class="dropdown_menu">
+                        	<li><a href="index_test.html?phukien_vida">Ví Da</a></li>
+                            <li><a href="index_test.html?phukien_thatlung">Thắt Lưng</a></li>
+                            <li><a href="index_test.html?phukien_dongho">Đồng Hồ</a></li>
+                        </ul>
+                    </li>
+                </ul>
+
+                <div class="div_filter">
+                    <div id="filter" >
+                        Price
+                        <div id="Price_filter">
+                            <div id="sapxep">
+                                <select id="select_price" onchange="SapXep(this);">
+                                    <option class="option"  value="0">Giá ngẫu nhiên </option>
+                                    <option class="option"  value="1">Giá từ thấp lên cao </option>
+                                    <option class="option"  value="2">Giá từ cao xuống thấp </option>
+                                </select>
+                                <div class="apdung" onclick="filter('all')">
+                                    <a>Thực Hiện</a>
+                                </div>
+                            </div>
+                            <div id="choose_price">
+                            
+                                <input type="text" id="pricefrom" onchange="doigia1()" placeholder="Giá từ"/>   
+                                <hr width="1" size="20" align="center" color="black"/>
+                                <input type="text" id="priceto" onchange="doigia2()" placeholder="Đến"/>
+                            </div>
+                        </div>
+                    </div>  
+                </div>
+            </div>
+        </div>
+    </div>
+    
+ 
+    
+    <div id="advertise">
+    	<img id="img" onclick="changeImage()" src="image/image_SP/QC1.png" alt="" />
+    </div>
+    <div class="center" id="product" ></div>
+    <div id="page"></div>
+    <div id="cacchinhsach"></div>
+    <div id="footer">
+    		<div class="footer_img">
+            	<img src="image/logo.png"/>
+            </div>
+    		<div class="menu_footer">Chăm Sóc Khách Hàng
+            	<hr width="75%" align="center" color="#537895" style="margin-top:10px;"/>
+            	<ul>
+                	<li><a id="csbh">Chính Sách Bảo Hành</a></li>
+                    <li><a id="hdmh">Hướng Dẫn Mua Hàng</a></li>
+                    <li><a id="hddt">Hướng Dẫn Đổi Trả</a></li>
+       	         </ul>
+       		</div>
+            <div class="menu_footer">Giới Thiệu
+            	<hr width="75%" align="center" color="#537895" style="margin-top:10px;"/>
+            	<ul>
+                	<li><a id="tttd">Thông Tin Tuyển Dụng</a></li>
+                    <li><a id="dieukhoan">Điều Khoản</a></li>
+                </ul>
+            </div>
+            <div class="menu_footer">Thông Tin Liên Hệ
+            	<hr width="75%" align="center" color="#537895" style="margin-top:10px;"/>
+                <ul>
+                	<li>Địa Chỉ: 273 An Dương Vương, P3, Q5, TP.HCM</li>
+                    <li>Hotline: 0989 999 999</li>
+                </ul>
+            </div>
+            <div class="menu_footer">Theo Dõi
+            	<hr width="75%" align="center" color="#537895" style="margin-top:10px;"/>
+            	<ul>
+                	<li><a href="https://www.facebook.com/"><img src="image/icon1.png" />Facebook</a></li>
+                    <li><a href="https://www.instagram.com/"><img src="image/icon2.png" />Instagram</a></li>
+                    <li><a href="https://www.youtube.com/"><img src="image/icon3.png" />Youtobe</a></li>
+                </ul>
+            </div>
+            <div class="copyright">Copyright © 2020 Men's Fashion. All Rights Reserved</div>
+    </div>
+    <div id="login" class="nomal1" style="z-index: 21;">
+        <div id="frame_login">
+            <h1 style="border-bottom: 5px solid black;">Đăng Nhập</h1>
+            <button id="close_login">+</button>
+            <form>
+                <div class=" textbox clearfix">
+                 
+                    <!-- <i><img src="image/2x/baseline_person_white_18dp.png" /></i> -->
+                    <input type="text" placeholder="Tên Đăng Nhập"  id="TK" />
+                </div>
+                <div class="textbox">
+                    <!-- <i><img src="image/2x/baseline_lock_white_18dp.png" /></i> -->
+                    <input type="password" placeholder="Mật Khẩu"  id="MK" />
+                </div>
+                <input id ='DN' type="submit"  class="btn_login" value="Đăng Nhập" style="font-size:22px; outline: none; font-weight:boldler;" /> 
+                <!-- onclick="dangnhap();" -->
+                <h1 style="font-size:20px; text-align: center;width: 100%; margin-left: 0px ;border-bottom: none;">Bạn Chưa Có Tài Khoản? <a id="DK" style="color:#36F">Đăng Ký</a></h1>
+            </form>
+        </div>
+        <form action="" method="post">
+            <div id="registration">
+                <div class="registration_top">
+                    <h1>Đăng Ký</h1>
+                    <button type="button" id="close_signup">+</button>
+                </div>
+                <div class="registration_left">
+                    <div class="form_group">
+                        <label for="name">Họ và tên:</label>
+                        <input type="text" placeholder="Họ và tên" class="form-control" id="name">
+                        <!-- <small id = 'small_name'>Bạn chưa nhập họ và tên</small> -->
+                    </div>
+                    <div class="form_group">
+                        <label for="phone">Số điện thoại:</label>
+                        <input type="text" placeholder="Số điện thoại" class="form-control" id="phone">
+                        <!-- <small id = 'small_phone'>Bạn chưa nhập số điện thoại</small> -->
+                    </div>
+                    <div class="form_group">
+                        <label for="address">Địa chỉ:</label>
+                        <input type="text" placeholder="Địa chỉ" class="form-control" id="address">
+                        <!-- <small id = 'small_address'>Bạn chưa nhập địa chỉ</small> -->
+                    </div>
+                </div>
+                <div class="registration_right">
+                    <div class="form_group">
+                        <label for="user_name">Tên đăng nhập:</label>
+                        <input type="text" placeholder="Tên đăng nhập" class="form-control" id="user_name">
+                        <!-- <small id = 'small_userName'>Bạn chưa nhập tên đăng nhập</small> -->
+                    </div>
+                    <div class="form_group">
+                        <label for="password">Mật khẩu:</label>
+                        <input type="password" placeholder="Mật khẩu" class="form-control" id="password">
+                        <!-- <small id = 'small_password'>Bạn chưa nhập mật khẩu</small> -->
+                    </div>
+                    <div class="form_group">
+                        <label for="re_password">Nhập lại mật khẩu:</label>
+                        <input type="password" placeholder="Nhập lại mật khẩu" class="form-control" id="re_password">
+                        <!-- <small id = 'small_confirmPassword'>Vui lòng nhập lại mật khẩu</small> -->
+                    </div>
+                </div>
+                <div style="clear:both">
+                </div>
+            <div class="registration_bot">
+                <input id="DK_ThanhCong" class ='btn' type="submit" value="Đăng Ký"  return false"/>
+                <h1>Quay lại trang <a id="return_login" style="color: red;">Đăng Nhập</a></h1>
+            </div>
+        </div>
+        </form>
+    </div>
+    
+    <div id="customalert"></div>
+    
+<div class ="nomal" id="xemCTSP"> 
+	<div class="chitiet" id="ctsp">
+    </div>
+</div>
+<div class ="nomal" id="huyDonHang"> 
+	<div id="xoasanpham">
+    </div>
+</div>
+
+<script type="text/javascript" src="js_test_abc.js"></script>
+ <script src="jquery-1.7.1.min.js" type="text/javascript"></script>
+
+</body>
+</html>
